@@ -1,12 +1,12 @@
   $(document).ready(function() {
       console.log('Connecting...');
-      Server = new FancyWebSocket('ws://192.168.0.23:9300');
+      Server = new FancyWebSocket('ws://192.168.1.106:9300');
 
 
       //Let the user know we're connected
       Server.bind('open', function() {
         console.log( "Connected." );
-      var mensaje = {'cliente':'php'};
+      var mensaje = {'cliente':'php','ip':'192.168.1.106','datos':'05050','estado':'conexion','tiempo':'0.14'  };
         Server.send('message', JSON.stringify(mensaje) );
 
       });
@@ -28,7 +28,7 @@
 
         console.log( res );
         //console.log(res.ip);
-      //  alert(res.texto);
+        //alert(res.ip);
 
         if( res.cliente==="controlador"){    
           $('#cliente').html('');    
@@ -40,6 +40,30 @@
         $('#cliente1').parent().addClass('panel-success');
         $('#cliente1').append(res.cliente );
       }
+
+        if( res.cliente==="php"){    
+          $('#cliente').html('');    
+        $('#cliente').parent().addClass('panel-success');
+        $('#cliente').append(res.cliente );
+
+         $('#ip').html('');
+        $('#ip').parent().addClass('panel-success');
+        $('#ip').append(res.ip);
+
+           $('#tiempo').html('');
+          $('#tiempo').parent().addClass('panel-success');
+          $('#tiempo').append(res.tiempo);    
+           $('#estado').parent().addClass('panel-success');
+           $('#estado').html('');
+            $('#estado').append(res.estado);
+                   $('#datos').html('');
+           $('#datos').parent().addClass('panel-success');
+           $('#datos').append(res.datos);
+      }
+
+
+
+
 
 
         if (res.destino==="servidor") {
