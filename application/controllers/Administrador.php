@@ -125,7 +125,6 @@ class Administrador extends CI_Controller {
 
 		
 
-	
 
 	/**
 	 * Se ejecuta cuando un nuevo cliente se conecta al socket

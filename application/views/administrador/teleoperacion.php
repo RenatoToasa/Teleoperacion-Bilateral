@@ -10,21 +10,20 @@
 
     <!-- Bootstrap -->
     <link href="<?php echo site_url('css'); ?>/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="canonical" href="http://themes.getbootstrap.com/products/dashboard" >
 	 <!-- Video -->
 		<script src="<?php echo site_url('js'); ?>/firebase.js"></script>
 	<script src="<?php echo site_url('js'); ?>/RTCPeerConnection-v1.5.js"></script>
 	<script src="<?php echo site_url('js'); ?>/broadcast.js"></script>
 	<script src="<?php echo site_url('js'); ?>/DetectRTC.js"></script>
-	<style type="text/css">
-body{
-	//background-image: url("fondo.jpg");
-}
-</style>
+
+
 
 
 </head>
-<body  >
+
+<body >
+
 <h1><center><b>TELEOPERACIÓN BILATERAL DE MÚLTIPLES MANIPULADORES MÓVILES</b></center></h1>
 	<br>	
 	<br>	
@@ -32,7 +31,7 @@ body{
 <div class="row text-center" >	
 	<div class="panel panel-default">
 			<div class="panel-heading">
-				<p><b>Información General</b></p>
+				<p><b>Datos Controlador</b></p>
 
 
 					<div class="row" >
@@ -105,7 +104,7 @@ body{
 <div class="row text-center" >	
 	<div class="panel panel-default">
 			<div class="panel-heading">
-				
+				<p><b>Datos Plataforma</b></p>
 
 
 					<div class="row" >
@@ -174,6 +173,77 @@ body{
 
 
 
+<div class="row text-center" >	
+	<div class="panel panel-default">
+			<div class="panel-heading">
+				
+
+
+					<div class="row" >
+						<div class="col-lg-2">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								Cliente Conectado
+							</div>
+							<div class="panel-body" id='cliente2'>	
+				
+						</div>
+					</div>
+				</div>
+			
+
+
+				<div class="row">
+				<div class="col-lg-2">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							Datos
+						</div>
+						<div class="panel-body" id='datos2'>	
+						
+						</div>
+					</div>
+				</div>
+
+			<div class="col-lg-2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Estado
+					</div>
+					<div class="panel-body" id='estado2'>	
+					
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Dirección 	IP
+					</div>
+					<div class="panel-body" id='ip2'>	
+					
+					</div>
+				</div>
+			</div>
+
+				<div class="col-lg-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 	Tiempo
+					</div>
+					<div class="panel-body" id='tiempo2'>	
+					
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
 
 
 
@@ -196,6 +266,8 @@ body{
 				Silla
 			</div>
 			<div class="panel-body" id='silla'>	
+    <!-- 
+
 
 <TABLE >
 	<TR>
@@ -221,6 +293,8 @@ body{
 	
 		</TABLE>
 
+		
+-->
 
 
 
@@ -234,6 +308,7 @@ body{
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							Streaming
+
 				
 					
 						</div>
@@ -242,6 +317,7 @@ body{
 			        <div id="videos-container"></div>
 			    </section>
 				<script src="<?php echo site_url('js'); ?>/streaming.js" type="text/javascript"></script>
+				
 						</div>
 					</div>
 				</div>
@@ -253,6 +329,9 @@ body{
 		</div>
 	</div>
 </div>
+
+
+
 
 </body>
 </html>
