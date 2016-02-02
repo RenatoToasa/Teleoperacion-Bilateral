@@ -263,7 +263,7 @@
 	<div class="col-lg-6">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Silla
+				Datos de Consola
 			</div>
 			<div class="panel-body" id='silla'>	
     <!-- 

@@ -25,53 +25,107 @@
       //console.log any messages sent from server
       Server.bind('message', function( payload ) {
         var res = jQuery.parseJSON(payload);
+      
 
 
+
+        //console.log(res.origen);
         console.log( res );
+       // console.log( res.tipo );
+
+
+
+
+
+        //console.log(cadena);
+       // alert(cadena);
+        $('#silla').parent().addClass('panel-success');
+
+        $('#silla').append(payload);
+        
+        
+
+
       //console.log(res.dir_esc);
 
-        if( res.origen ==="controlador"||res.cliente==="controlador"){    
+
+/*
+
+
+      if (typeof res.origen!="undefined") {
+         for (var i = 0; i < res.origen.length; i++) {
+          var item = res.origen[i];
+          console.log(item);
+           $('#cliente').html('');    
+        $('#cliente').parent().addClass('panel-success');
+        $('#cliente').append(item );
+      }
+
+ }
+
+*/
+
+      if(res.cliente==="portatil"){
         $('#cliente').html('');    
         $('#cliente').parent().addClass('panel-success');
-        $('#cliente').append(res.origen );
-        $('#datos').html('');
-        $('#datos').parent().addClass('panel-success');
-        $('#datos').append(res.silla_val);
+        $('#cliente').append(res.cliente );     
         $('#estado').html('');
         $('#estado').parent().addClass('panel-success');
-        $('#estado').append(res.estado);
+        $('#estado').append("Conexion");
+        
+        if(res.tipo==="conexion"){
         $('#ip').html('');
         $('#ip').parent().addClass('panel-success');
         $('#ip').append(res.ip);
 
+        }    
+  
+
+
+        
+      }
+
+
+        if( res.origen ==="controlador"){    
+       
+        $('#datos').html('');
+        $('#datos').parent().addClass('panel-success');
+        $('#datos').append(res.silla_val);
+
+
+
+
+      }
+            if(res.cliente==="brazo")
+      {
+         $('#cliente1').html('');    
+        $('#cliente1').parent().addClass('panel-success');
+        $('#cliente1').append(res.cliente );
 
       }
 
-          if( res.origen ==="brazo"|| res.cliente==="brazo"){    
 
-        $('#estado1').parent().addClass('panel-success');
-        $('#estado1').append(res.tipo);
-        $('#ip1').html('');
-       // $('#ip1').parent().addClass('panel-success');
-        //$('#ip1').append(res.ip);
+
+          if( res.origen ==="brazo"){    
+
         $('#cliente1').html('');    
         $('#cliente1').parent().addClass('panel-success');
         $('#cliente1').append(res.cliente );
-      /*
-        $('#datos1').html('');
-        $('#datos1').parent().addClass('panel-success');
-        $('#datos1').append(res.silla_val);
+        $('#datos1').html('');        
         $('#estado1').html('');
         $('#estado1').parent().addClass('panel-success');
         $('#estado1').append(res.estado);
         $('#ip1').html('');
         $('#ip1').parent().addClass('panel-success');
         $('#ip1').append(res.ip);
-        */
+
 
       }
 
-      $('#silla').append(res);
+
+
+
+
 
 
 
@@ -114,8 +168,9 @@
         }
       }
         */
-       
+              
  });
+
 
       Server.connect();
 
