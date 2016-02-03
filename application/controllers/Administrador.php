@@ -152,23 +152,7 @@ class Administrador extends CI_Controller {
 	 * @return [type]           [description]
 	 */
 
-	/*
 
-		function wsOnOpen($clientID) {
-		$ip = long2ip($this->socket->wsClients[$clientID][6]);
-		
-
-		$this->socket->log("$ip ($clientID) has connected.");
-
-
-
-		//Send a join notice to everyone but the person who joined
-		foreach ($this->socket->wsClients as $id => $client)
-			if ($id != $clientID)
-				$this->socket->wsSend($id, json_encode(array('tipo'=>'conexion','cliente'=>$clientID ,'ip'=>$ip,'nombre'=>$clientID[12])));
-
-	}
-	*/
 	function wsOnOpen($clientID) {
 		$ip = long2ip($this->socket->wsClients[$clientID][6]);
 
@@ -182,7 +166,7 @@ class Administrador extends CI_Controller {
 		//Send a join notice to everyone but the person who joined
 		foreach ($this->socket->wsClients as $id => $client)
 			if ($id != $clientID)
-				$this->socket->wsSend($id, json_encode(array('tipo'=>'conexion','cliente'=>$clientID ,'ip'=>$ip,'nombre'=>$clientID[12])));
+				$this->socket->wsSend($id, json_encode(array('tipo'=>'conexion','clienteId'=>$clientID ,'ip'=>$ip)));
 
 	}
 

@@ -72,27 +72,31 @@
 			</div>
 
 
-			<div class="col-lg-2">
+
+
+				<div class="col-lg-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Dirección 	IP
+						 	Datos Motores
 					</div>
-					<div class="panel-body" id='ip'>	
+					<div class="panel-body" id='motor'>	
 					
 					</div>
 				</div>
 			</div>
 
-				<div class="col-lg-3">
+						<div class="col-lg-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 	Tiempo
+						Tiempo Respuesta
 					</div>
 					<div class="panel-body" id='tiempo'>	
 					
 					</div>
 				</div>
 			</div>
+
+
 
 		</div>
 	</div>
@@ -145,104 +149,92 @@
 			</div>
 
 
-			<div class="col-lg-2">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						Dirección 	IP
-					</div>
-					<div class="panel-body" id='ip1'>	
-					
-					</div>
-				</div>
-			</div>
 
 				<div class="col-lg-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 	Tiempo
+						 	Datos Motores
 					</div>
-					<div class="panel-body" id='tiempo1'>	
+					<div class="panel-body" id='motor1'>	
 					
 					</div>
 				</div>
 			</div>
 
+						<div class="col-lg-2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Tiempo Respuesta
+					</div>
+					<div class="panel-body" id='tiempo'>	
+					
+					</div>
+				</div>
+			</div>
+
+
 		</div>
 	</div>
 </div>
-
 
 
 <div class="row text-center" >	
 	<div class="panel panel-default">
 			<div class="panel-heading">
+				<p><b>Estado Dispositivos</b></p>
+
+		<div class="col-lg-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 	Datos 
+					</div>
+					<div class="panel-body" id='dispositivos'>	
+					Plataforma    <center><input type="text" name="interfaz1" id ='interfaz1'>  <input type="text" name="resultado1" id ='resultado1'>  <input type="text" name="status1" id ='status1'> </center>
+							
 				
+				Proceso Plataforma <center>        <input type="text" name="interfaz" id ='interfaz'>  <input type="text" name="resultado" id ='resultado'>  <input type="text" name="status" id ='status'></center>
+				  
+				<br>	
+				<br>	
+					
+				Video     <center>  <input type="text" name="interfaz2" id ='interfaz2'>  <input type="text" name="resultado2" id ='resultado2'>  <input type="text" name="status2" id ='status2'> </center>
+				
+				
+				Proceso Video    <center><input type="text" name="interfaz3" id ='interfaz3'>  <input type="text" name="resultado3" id ='resultado3'>  <input type="text" name="status3" id ='status3'> </center>
 
 
-					<div class="row" >
-						<div class="col-lg-2">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								Cliente Conectado
-							</div>
-							<div class="panel-body" id='cliente2'>	
-				
-						</div>
+
+					
 					</div>
 				</div>
-			
+			</div>
+				
 
-
-				<div class="row">
-				<div class="col-lg-2">
+<div class="row">
+				<div class="col-lg-5">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							Datos
+							Streaming
+
+				
+					
 						</div>
-						<div class="panel-body" id='datos2'>	
-						
+						<div class="panel-body" id='streaming'>	
+						<section class="experiment"> 
+			        <div id="videos-container"></div>
+			    </section>
+				<script src="<?php echo site_url('js'); ?>/streaming.js" type="text/javascript"></script>
+				
 						</div>
 					</div>
 				</div>
 
-			<div class="col-lg-2">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						Estado
-					</div>
-					<div class="panel-body" id='estado2'>	
-					
-					</div>
-				</div>
-			</div>
 
 
-			<div class="col-lg-2">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						Dirección 	IP
-					</div>
-					<div class="panel-body" id='ip2'>	
-					
-					</div>
-				</div>
-			</div>
-
-				<div class="col-lg-3">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						 	Tiempo
-					</div>
-					<div class="panel-body" id='tiempo2'>	
-					
-					</div>
-				</div>
-			</div>
 
 		</div>
 	</div>
 </div>
-
 
 
 
@@ -260,41 +252,13 @@
 			<p><b>Control Clientes </b></p>
 				
 	<div class="row" >
-	<div class="col-lg-6">
+	<div class="col-lg-8" >
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				Datos de Consola
 			</div>
-			<div class="panel-body" id='silla'>	
-    <!-- 
+			<div class="panel-body" id='consola'>	
 
-
-<TABLE >
-	<TR>
-		<TD>TTYS</TD> <TD><input type=" text" name="ttys" id ='ttys' value="" placeholder="ttys " class="ttys"></text></TD>  <TD>Estado</TD> <TD><input type=" text" name="estadoT" id = 'estadoT'
-		value="" placeholder="Estado TTY " class="estadoT"></text>	</TD>
-
-	</TR>
-<br>
-	<TR>
-		<TD>TTYS Video</TD> <TD><input type=" text" name="dev/video" id ='dev/video' value="" placeholder="ttys video" class="dev/video"></text></TD>  <TD>Estado</TD> <TD><input type=" text" name="estadoVideo" id = 'estadoVideo'
-		value="" placeholder="Estado TTY Video" class="estadoVideo"></text>	</TD>
-
-	</TR>
-
-	<TR>
-		<TD>Silla</TD> <TD><input type=" text" id='txtsilla' name="txtsilla" value="5" placeholder="Silla " class="txtsilla"></text></TD>  <TD>Estado</TD> <TD><input type=" text" name="txtEstadoSilla" id ='txtEstadoSilla' value="" placeholder="Estado Silla" class="txtEstadoSilla"></text>	</TD>
-	</TR>
-
-		<TR>
-		<TD>Video</TD> <TD><input type=" text" id = 'video' name="video" value="" placeholder="Video " class="video"></text></TD>  <TD>Estado</TD> <TD><input type=" text" name="estadoV" value="" placeholder="Estado Video" class="estadoV"></text>	</TD>
-	</TR>
-	
-	
-		</TABLE>
-
-		
--->
 
 
 
@@ -303,24 +267,7 @@
 				</div>
 
 
-				<div class="row">
-				<div class="col-lg-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							Streaming
-
 				
-					
-						</div>
-						<div class="panel-body" id='streaming'>	
-						<section class="experiment"> 
-			        <div id="videos-container"></div>
-			    </section>
-				<script src="<?php echo site_url('js'); ?>/streaming.js" type="text/javascript"></script>
-				
-						</div>
-					</div>
-				</div>
 			<br>	
 
 
