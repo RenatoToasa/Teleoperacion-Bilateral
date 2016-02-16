@@ -18,7 +18,13 @@
 	<script src="<?php echo site_url('js'); ?>/DetectRTC.js"></script>
 
 
+<script language="JavaScript">
 
+function ventanaNueva(documento){	
+	window.open(documento,'nuevaVentana','width=500, height=500');
+}
+
+</script>
 
 </head>
 
@@ -257,8 +263,7 @@
 			<div class="panel-heading">
 				Datos de Consola
 			</div>
-			<div class="panel-body" id='consola'>	
-
+			<div  id='consola' style='height:220px;width:1307px;border:1px solid #ccc;font:16px/26px ;overflow:auto;'>	
 
 
 
@@ -267,9 +272,18 @@
 				</div>
 
 
-				
-			<br>	
-
+						
+			<div class="col-lg-2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Panel Administrador
+					</div>
+					<div class="panel-body" id='admin'>	
+				<input type="button" id ='btnAbrir' value="Abrir ventana" onclick="ventanaNueva('Administrador/consola')" />
+					
+					</div>
+				</div>
+			</div>
 
 	
 

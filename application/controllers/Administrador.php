@@ -32,6 +32,12 @@ class Administrador extends CI_Controller {
 		$this->load->view('administrador/admin_video',$data);
 	}
 
+	public function consola(){
+		$data=array();
+		$this->load->view('administrador/admin_consola',$data);
+	}
+
+
 	/**
 	 * Inicializa un socket en la ip y puertos especificados
 	 * 
@@ -43,7 +49,7 @@ class Administrador extends CI_Controller {
 		$this->socket->bind('message', 'wsOnMessage');
 		$this->socket->bind('open', 'wsOnOpen');
 		$this->socket->bind('close', 'wsOnClose');     
-		return $this->socket->wsStartServer('192.168.1.106',9300);
+		return $this->socket->wsStartServer('192.168.0.24',9300);
 		
 
 	}
@@ -114,8 +120,10 @@ class Administrador extends CI_Controller {
 						if($client[12]=="php"){
 						//enviamos solo al cliente php
 						$this->socket->wsSend($id,json_encode ($msj));
+
 					}
-					}
+					
+				}
 									
 
 					//Reenvio en mensaje al mismo cliente que envio

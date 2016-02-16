@@ -1,6 +1,6 @@
   $(document).ready(function() {
       console.log('Connecting...');
-      Server = new FancyWebSocket('ws://192.168.1.106:9300');
+      Server = new FancyWebSocket('ws://192.168.0.24:9300');
 
 
       //Let the user know we're connected
@@ -27,10 +27,18 @@
         var res = jQuery.parseJSON(payload);
 
         //console.log(res.origen);
+        if(typeof res!="null"){
         console.log( res );
-       // console.log( res.tipo );
-     // console.log( res.motor7 );
-
+       
+       
+       
+    }
+      //console.log(res.resultado);
+       if(typeof res.resultado!="undefined"){
+              
+       $("#txtconsola").append(res.resultado+'\n');
+       }
+//
 
         $('#interfaz1').val("");
         $('#resultado1').val("");
@@ -50,6 +58,7 @@
         $('#consola').parent().addClass('panel-success');
            $('#consola').append(' <BR />');
         $('#consola').append(payload);
+      
         }
         
 
@@ -58,6 +67,7 @@
   
      // $('#interfaz1').val("hola");
         $('#streaming').parent().addClass('panel-success');    
+        $('#admin').parent().addClass('panel-success');    
 
       if( res.cliente==="controlador"){            
         $('#cliente').html('');    
@@ -65,20 +75,27 @@
         $('#cliente').append(res.cliente );
        }
 
-        if( res.origen ==="controlador"){    
-       
+
+
+  if( res.origen ==="controlador"){    
+        var fechaActual = new Date();
+        var m = fechaActual.getMilliseconds();
+        $('#tiempo').html('');
+        $('#tiempo').parent().addClass('panel-success');
+        $('#tiempo').append(m);  
+     
         $('#datos').html('');
         $('#datos').parent().addClass('panel-success');
         $('#datos').append(res.val_silla);       
         $('#estado').html('');
         $('#estado').parent().addClass('panel-success');
         $('#estado').append("Conexion");
-       $('#motor').html('');
+        $('#motor').html('');
         $('#motor').parent().addClass('panel-success');
         $('#motor').append("Motor1 = " + res.motor1)
         $('#motor').append(' <BR />');
         $('#motor').append("Motor2 = " + res.motor2);
-         $('#motor').append(' <BR />');
+        $('#motor').append(' <BR />');
         $('#motor').append("Motor3 = " + res.motor3);
         $('#motor').append(' <BR />');
         $('#motor').append("Motor4 = " + res.motor4);
@@ -92,20 +109,26 @@
         $('#motor').append("Motor8 = " + res.motor8);
         $('#motor').append(' <BR />');
         $('#motor').append("Motor9 = " + res.motor9);
-      }
-     
+  
 
-          if( res.cliente==="plataforma"){            
+
+      
+}
+     
+      if( res.cliente==="plataforma"){            
         $('#cliente1').html('');    
         $('#cliente1').parent().addClass('panel-success');
         $('#cliente1').append(res.cliente );
-            }
+        var endTime = new Date();
+        }
 
 
 
+
+    
           if( res.origen ==="plataforma"){    
 
-
+  
         $('#datos1').html('');        
         $('#estado1').html('');
         $('#estado1').parent().addClass('panel-success');
@@ -113,7 +136,7 @@
         $('#ip1').html('');
         $('#ip1').parent().addClass('panel-success');
         $('#ip1').append(res.ip);
-          $('#estado1').html('');
+        $('#estado1').html('');
         $('#estado1').parent().addClass('panel-success');
         $('#estado1').append("Conexion");
         $('#motor1').html('');
@@ -121,7 +144,7 @@
         $('#motor1').append("Motor1 = " + res.mot1)
         $('#motor1').append(' <BR />');
         $('#motor1').append("Motor2 = " + res.mot2);
-         $('#motor1').append(' <BR />');
+        $('#motor1').append(' <BR />');
         $('#motor1').append("Motor3 = " + res.mot3);
         $('#motor1').append(' <BR />');
         $('#motor1').append("Motor4 = " + res.mot4);
@@ -135,9 +158,13 @@
         $('#motor1').append("Motor8 = " + res.mot8);
         $('#motor1').append(' <BR />');
         $('#motor1').append("Motor9 = " + res.mot9);
+      
 
 
-      }
+      
+    }
+
+ 
 
 
      if(typeof res.monitor!="undefined"){
@@ -167,58 +194,45 @@
 
     }
 
-/*
-        if(typeof res.monitor!="undefined"){
-        for (var i = 0; i < res.monitor.length; i++) {
-          var item = res.monitor[i];
-          
-          $('#dispositivos').parent().addClass('panel-success');
-          
 
-
-          switch(item.interfaz){
-
-            //break;
-            case "dev/ttys":{
-              $('#interfaz1').val(item.interfaz);
-              $('#resultado1').val(item.resultado);
-              $('#status1').val(item.commandstatus);
-
-            }
-              
-             case "plataforma":{
-              $('#interfaz').val(item.interfaz);
-              $('#resultado').val(item.resultado);
-              $('#status').val(item.commandstatus);
-
-            }
-            
-             case "dev/video":{
-              $('#interfaz2').val(item.interfaz);
-              $('#resultado2').val(item.resultado);
-              $('#status2').val(item.commandstatus);
-             
-            }
-            
-            case "video":{
-             $('#interfaz3').val(item.interfaz);
-              $('#resultado3').val(item.resultado);
-
-              $('#status3').val(item.commandstatus);
-            }
-            break;
-
-          }
-
-          
-        }
-
-      }
-      */
-
-    
        
  });
+
+
+    //Administracion Consola
+       
+        $("#btnConectar").click(function(){
+   //      if( res.cliente==="consola"){  
+    
+
+        var mensaje = {'origen':'php', 'destino':'consola','accion':'conectar', 'ventana':'uno'};
+        Server.send('message', JSON.stringify(mensaje) );
+          $('#tiempo').html('');
+        $('#tiempo').parent().addClass('panel-success');
+        $('#tiempo').append(i);  
+
+  
+     });
+
+        $("#btnejecutar").click(function(){
+  
+            $('#txtconsola').html('');   
+       var texto= $('#txtenvio').val();
+        var mensaje = {'origen':'php', 'destino':'consola','ventana':'uno', 'comando':texto};
+        Server.send('message', JSON.stringify(mensaje) );
+
+         
+     });
+
+
+
+/*
+      function ventanaNueva(documento){ 
+  window.open(documento,'nuevaVentana','width=300, height=400');
+}
+
+  $('#btnAbrir').append('<option  onclick="ventanaNueva('datos.html')"> </option>');
+  */
 
       Server.connect();
 });
