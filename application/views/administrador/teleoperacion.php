@@ -24,6 +24,10 @@ function ventanaNueva(documento){
 	window.open(documento,'nuevaVentana','width=500, height=500');
 }
 
+function grafica(documento){	
+	window.open(documento,'nuevaVentana','width=1000, height=1000');
+}
+
 </script>
 
 </head>
@@ -280,6 +284,8 @@ function ventanaNueva(documento){
 					</div>
 					<div class="panel-body" id='admin'>	
 				<input type="button" id ='btnAbrir' value="Abrir ventana" onclick="ventanaNueva('Administrador/consola')" />
+
+				<input type="button" id ='btn3D' value="Abrir 3D" onclick="grafica('Administrador/grafica')" />
 					
 					</div>
 				</div>

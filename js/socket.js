@@ -1,7 +1,9 @@
   $(document).ready(function() {
-      console.log('Connecting...');
-      Server = new FancyWebSocket('ws://192.168.0.24:9300');
 
+  
+
+      console.log('Connecting...');
+      Server = new FancyWebSocket('ws://192.168.1.102:9300');
 
       //Let the user know we're connected
       Server.bind('open', function() {
@@ -25,20 +27,28 @@
       //console.log any messages sent from server
       Server.bind('message', function( payload ) {
         var res = jQuery.parseJSON(payload);
+        
 
         //console.log(res.origen);
         if(typeof res!="null"){
         console.log( res );
        
-       
-       
+ 
+          
     }
-      //console.log(res.resultado);
+    
+
+//ENVIO DATOS CLIENTE SERVIDOR CLIENTE
        if(typeof res.resultado!="undefined"){
               
        $("#txtconsola").append(res.resultado+'\n');
        }
-//
+
+
+           if(typeof res.val1!="undefined"){
+              SendMessage('Q1','moverQ1',res.val1);
+       
+       }
 
         $('#interfaz1').val("");
         $('#resultado1').val("");
@@ -62,10 +72,6 @@
         }
         
 
-
-      //console.log(res.dir_esc);
-  
-     // $('#interfaz1').val("hola");
         $('#streaming').parent().addClass('panel-success');    
         $('#admin').parent().addClass('panel-success');    
 
@@ -109,9 +115,6 @@
         $('#motor').append("Motor8 = " + res.motor8);
         $('#motor').append(' <BR />');
         $('#motor').append("Motor9 = " + res.motor9);
-  
-
-
       
 }
      
@@ -123,10 +126,8 @@
         }
 
 
-
-
     
-          if( res.origen ==="plataforma"){    
+      if( res.origen ==="plataforma"){    
 
   
         $('#datos1').html('');        
@@ -158,14 +159,12 @@
         $('#motor1').append("Motor8 = " + res.mot8);
         $('#motor1').append(' <BR />');
         $('#motor1').append("Motor9 = " + res.mot9);
-      
-
-
-      
+            
+        SendMessage('Q1','moverQ1',res.val1);
     }
 
  
-
+//ESTADO DE DISPOSITIVOS
 
      if(typeof res.monitor!="undefined"){
         $('#dispositivos').parent().addClass('panel-success');
@@ -179,9 +178,6 @@
             $('#interfaz2').val(res.monitor[1].interfaz);
               $('#resultado2').val(res.monitor[1].resultado);
               $('#status2').val(res.monitor[1].commandstatus);
-     
-
-
 
             $('#interfaz').val(res.monitor[2].interfaz);
               $('#resultado').val(res.monitor[2].resultado);
@@ -194,12 +190,24 @@
 
     }
 
+  $('.moverQ1').click(function(e){
+
+    //e.preventDefault();
+      var mensaje = {'origen':'php', 'destino':'php','val1':100, 'val2':'100'};
+     Server.send('message', JSON.stringify(mensaje) );
+   // SendMessage('Q1','moverQ1',100);
+
+
+ });
+
+
+
 
        
  });
 
 
-    //Administracion Consola
+//CONSOLA DE ADMINISTRACION
        
         $("#btnConectar").click(function(){
    //      if( res.cliente==="consola"){  
@@ -224,15 +232,28 @@
          
      });
 
+//GRAFICA 3D
 
 
-/*
-      function ventanaNueva(documento){ 
-  window.open(documento,'nuevaVentana','width=300, height=400');
-}
+  // $('.moverQ1').click(function(e){
 
-  $('#btnAbrir').append('<option  onclick="ventanaNueva('datos.html')"> </option>');
-  */
+   // e.preventDefault();
+    //  var mensaje = {'origen':'php', 'destino':'php','val1':'100', 'val2':'100'};
+    // Server.send('message', JSON.stringify(mensaje) );
+    //SendMessage('Q1','moverQ1',100);
+
+
+ // });
+
+
+
+  $('.moverQ2').click(function(e){
+    e.preventDefault();
+    SendMessage('Q2','moverQ2',100);
+  });
+
+
+
 
       Server.connect();
 });

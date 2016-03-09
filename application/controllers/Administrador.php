@@ -37,6 +37,10 @@ class Administrador extends CI_Controller {
 		$this->load->view('administrador/admin_consola',$data);
 	}
 
+		public function grafica(){
+		$data=array();
+		$this->load->view('Brazo/index.html',$data);
+	}
 
 	/**
 	 * Inicializa un socket en la ip y puertos especificados
@@ -49,7 +53,7 @@ class Administrador extends CI_Controller {
 		$this->socket->bind('message', 'wsOnMessage');
 		$this->socket->bind('open', 'wsOnOpen');
 		$this->socket->bind('close', 'wsOnClose');     
-		return $this->socket->wsStartServer('192.168.0.24',9300);
+		return $this->socket->wsStartServer('192.168.1.102',9300);
 		
 
 	}
