@@ -20,6 +20,9 @@
     <link href="<?php echo site_url('img'); ?>/favicon.ico" rel="shortcut icon">
 
 
+
+
+
     <script src="<?php echo site_url('js'); ?>/UnityProgress.js"></script>
 
 
@@ -41,25 +44,20 @@
   <script src="<?php echo site_url('js'); ?>/DetectRTC.js"></script>
 
 
-   </style>
-
 
 	</head>
 	<body class="is-loading-0 is-loading-1 is-loading-2">
 	<div id="viewer"> 
-	<span>
 
-
-	</span>
 
 		<div class="inner"> 
 			<!--MAGIA-->
 			 <section class="experiment"> 
-		        <div id="videos-container" >
+		        <div id="videos-container">
 		        </div>
 		    </section>
-		    <div class="contenedorUnity" style="">
-		      <canvas class="emscripten" id="canvas" name= "canvas" oncontextmenu="event.preventDefault()" height="250px" width="300px">
+		    <div class="contenedorUnity1"   >
+		      <canvas class="emscripten" id="canvas" name= "canvas" oncontextmenu="event.preventDefault()" height="250px" width="350px" >
 		      </canvas>
 		      <br>
 		     <!-- <div class="logo"></div>
@@ -70,102 +68,69 @@
 		      -->
 		    </div>
 		<!--/MAGIA-->
-			<div class="toggle" border= "1"></div> 
+			<div class="toggle" ></div> 
 		</div> 
 	</div>
 		<!-- Main -->
-			<div id="main">
+			<div id="main" >
 				<!-- Header -->
-					<header id="header">
-						<h1>Teleoperación Bilateral</h1>
+					<header id="header" >
+						<h2>Teleoperacion Bilateral</h2>
+						<br>
 
-							<br>
 
-		<div class="col-lg-0.5">
-				<div class="panel panel-default">
-					<div class="panel-heading" id="manipulador">
-						 <center><strong>Manipulador Movil</strong></center>	
-				
-					</div>
-				
-				</div>
-			</div>
 
-		<div class="col-lg-0.5">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						 <center><strong>Brazo robotico</strong></center>	
-				
-					</div>
-				
-				</div>
-			</div>
+
 				<div class="col-lg-0.5">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 <center><strong>Plataforma Movil</strong></center>	
-				
-					</div>
-				
-				</div>
-			</div>
-
-				<div class="col-lg-0.5" >
-				<div class="panel panel-default" >
-					<div class="panel-heading"  >
-						 <center> <input type="button" id ='btnhaptico' value="Dispsitivo Haptico" /></center>	
+						 <center><strong>Falcon</strong></center>	
 				
 
 					</div>
-					<div class="panel-body" id='falcon' style ='display:none;' >	
-						<center>
-						 Px: 0000   	fx: 0000
+					<div class="panel-body" id='falcon'>	
+							 <center>
+						 Pl: 0000
 						 <br>
-						 Py: 0000	    fy: 0000
+						 Pm: 0000
 						 <br>
-						 Pz: 0000	    fz: 0000
+						 Pn: 0000
 						 </center>
 					</div>
 				</div>
 			</div>
-							<div class="col-lg-0.5">
-				<div class="panel panel-default">
-					<div class="panel-heading" >
-						 <center> <input type="button" id ='btnposicion' value="Posicion/Velocidad" /></center>	
-					</div>
-					<div class="panel-body" id='posicion' style ='display:none;'>	
-					
-					</div>
-				</div>
-			</div>
+
 							<div class="col-lg-0.5">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 <center> <input type="button" id ='btnhmanipulabilidad' value="Manipulabilidad" /></center>	
+						 <center><strong>Brazo</strong></center>	
 					</div>
-					<div class="panel-body" id='manipulabilidad' style ='display:none;' >	
+					<div class="panel-body" id='brazo'>	
 					
 					</div>
 				</div>
 			</div>
+
 							<div class="col-lg-0.5">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 <center> <input type="button" id ='btnconfig' value="Configuracion del Robot" /></center>	
+						 <center><strong>Plataforma</strong></center>	
 					</div>
-					<div class="panel-body" id='config'style ='display:none;'>	
+					<div class="panel-body" id='plataforma'>	
 					
 					</div>
 				</div>
 			</div>
-						<!--
+
 						<ul class="icons">
+
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
 							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						
 						</ul>
-
+<!-- 
 						<label>MOT1</label>
 						<input type="range" id ="mot1" name="mot1" min="0" max="4096" >
 						<label>MOT2</label>
@@ -175,7 +140,9 @@
 						<label>MOT7</label>
 						<input type="range" id ="mot7" name="mot7" min="0" max="4096"  >
 -->
-					</header>					
+					</header>
+
+					
 
 				<!-- Thumbnail -->
 					<section id="thumbnails">
@@ -185,7 +152,9 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://designscrazed.org/">HTML5</a>.</li>
+<!-- 
+							<li>&copy; Teleoperacion.</li><li>Desarrolladores: <a href="http://designscrazed.org/">UTA</a>.</li>
+							-->
 						</ul>
 					</footer>
 
@@ -196,51 +165,8 @@
 			<!--[if lte IE 8]><script src="<?php echo site_url('bower_components/respond/src'); ?>/respond.js"></script><![endif]-->
 
 			<script src="<?php echo site_url('js'); ?>/main.js"></script>
-			
 			<script type='text/javascript'>
-			$('#manipulador').parent().addClass('panel-success');
-			$('#falcon').parent().addClass('panel-success');
-			$('#posicion').parent().addClass('panel-success');
-			$('#manipulabilidad').parent().addClass('panel-success');
-			$('#config').parent().addClass('panel-success');
-		/*
-        $("#btnhaptico")
-          .mouseenter(function() {
-          	var estilo = document.getElementById("falcon");
-	
-			var nuevo= estilo.getAttribute("style");         
-         	estilo.setAttribute('style','display:inline;' );         	
-		  })
-		  .mouseleave(function() {
-		   	var estilo = document.getElementById("falcon");			
-			var nuevo= estilo.getAttribute("style");
-         	estilo.setAttribute('style','display:none;' );
-  });
-
-*/
-        $("#btnhaptico").click(function(){
-
-        	$('#falcon').slideToggle("slow");
-
-        });
-           $("#btnposicion").click(function(){
-
-        	$('#posicion').slideToggle("slow");
-
-        });
-
-        $("#btnhmanipulabilidad").click(function(){
-
-        	$('#manipulabilidad').slideToggle("slow");
-
-        });
-
-        $("#btnconfig").click(function(){
-
-        	$('#config').slideToggle("slow");
-
-        });
-
+			  $('#falcon').parent().addClass('panel-success');
 			  var Module = {
 			    TOTAL_MEMORY: 268435456,
 			    errorhandler: null,     // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
@@ -324,6 +250,10 @@
 					}
 
 				});
+
+
+
+
 
 					
 			});

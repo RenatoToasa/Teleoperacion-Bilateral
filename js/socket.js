@@ -31,10 +31,8 @@
 
         //console.log(res.origen);
         if(typeof res!="null"){
-      //  console.log( res );
-       
- 
-          
+      //  console.log( res );   
+           
     }
     
 
@@ -79,7 +77,14 @@
         $('#cliente').append(res.cliente );
        }
 
+/*
+        $('.mot1').append('<option value="'+parseInt(res.mot1)'"></option>');
+        $('.mot2').append('<option value="'+res.mot2'"></option>');
+        $('.mot5').append('<option value="'+res.mot5'"></option>');
+        $('.mot7').append('<option value="'+res.mot7'"></option>');
 
+
+*/
 
   if( res.origen ==="controlador"){    
         var fechaActual = new Date();
@@ -123,11 +128,22 @@
         var endTime = new Date();
         }
 
+console.log(res.mot1);
+console.log(res.mot2);
+console.log(res.mot5);
+console.log(res.mot7);
+/*
+     document.getElementById('mot1').setAttribute('value', parseInt(res.mot1));
+     document.getElementById('mot2').setAttribute('value', parseInt(res.mot2));
+     document.getElementById('mot5').setAttribute('value', parseInt(res.mot5));
+     document.getElementById('mot7').setAttribute('value', parseInt(res.mot7));
+*/
 
-    
       if( res.origen ==="plataforma"){    
+        //$('#mot1').setAttribute('value', parseInt(res.mot1));
+       //$('#mot1').setAttribute('value', 4000);
+       //document.getElementById('mot1').setAttribute('value', 4000);
 
-  
         $('#datos1').html('');        
         $('#estado1').html('');
         $('#estado1').parent().addClass('panel-success');
@@ -160,7 +176,6 @@
             
         
         try{
-
 
 
         
@@ -198,6 +213,11 @@
   }catch(error){
     console.log("Error en SendMessage");
   }
+
+
+
+
+
 
 
     }
