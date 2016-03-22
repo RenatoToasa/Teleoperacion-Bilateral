@@ -1243,6 +1243,7 @@
 
 /*
 
+
 #videos-container video {	
 	min-width: 25%;
 	position: absolute;
@@ -1250,7 +1251,7 @@
 	top:75%;
 	z-index: 2;
 
-	
+	float:right;
 	    
 }
 .contenedorUnity1 {
@@ -1265,9 +1266,9 @@
 
 .contenedorUnity1 canvas{
 
-
 min-width: 90%;
 }
+
 */
 
 
@@ -1287,5 +1288,4 @@ min-width: 90%;
     top: 80px;
     right: 0;
 }
-
 
