@@ -1241,6 +1241,35 @@
 		}
 
 
+/*
+
+#videos-container video {	
+	min-width: 25%;
+	position: absolute;
+	right: 10%;
+	top:75%;
+	z-index: 2;
+
+	
+	    
+}
+.contenedorUnity1 {
+			min-width: 90%;
+	 bottom: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
+	   
+}
+
+.contenedorUnity1 canvas{
+
+
+min-width: 90%;
+}
+*/
+
 
 #videos-container video {	
 	min-width: 100%;
@@ -1255,38 +1284,8 @@
 .contenedorUnity canvas{
 	border-radius: 100px;
 	box-shadow: 10px 6px 5px 0px rgba(0,0,0,0.75);
-}
-
-
-
-#videos-container1 video {	
-	min-width: 20%;
-
-	position: absolute;
-	right: 10%;
-	top:75%;
-	z-index: 2;
-
-	
-    
-}
-
-
-.contenedorUnity1 {
-	min-width: 90%;
-	 bottom: 0;
-    position: absolute;
+    top: 80px;
     right: 0;
-    z-index: 1;
-	   
 }
 
-.contenedorUnity1 canvas{
-
-	min-width: 90%;
-
-  
-	
-
-}
 

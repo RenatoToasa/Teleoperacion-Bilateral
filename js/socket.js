@@ -1,7 +1,5 @@
   $(document).ready(function() {
 
-  
-
       console.log('Connecting...');
       Server = new FancyWebSocket('ws://192.168.1.102:9300');
 
@@ -127,12 +125,12 @@
         $('#cliente1').append(res.cliente );
         var endTime = new Date();
         }
-
+/*
 console.log(res.mot1);
 console.log(res.mot2);
 console.log(res.mot5);
 console.log(res.mot7);
-/*
+
      document.getElementById('mot1').setAttribute('value', parseInt(res.mot1));
      document.getElementById('mot2').setAttribute('value', parseInt(res.mot2));
      document.getElementById('mot5').setAttribute('value', parseInt(res.mot5));
@@ -176,20 +174,10 @@ console.log(res.mot7);
             
         
         try{
-
-
-        
-          SendMessage('Q1','moverQ1',parseInt(res.mot1));
-        
-        
-          SendMessage('Q2','moverQ2',parseInt(res.mot2));
-              
-        
-          SendMessage('Q3','moverQ3',parseInt(res.mot5));
-          
-        
+          SendMessage('Q1','moverQ1',parseInt(res.mot1));        
+          SendMessage('Q2','moverQ2',parseInt(res.mot2));                      
+          SendMessage('Q3','moverQ3',parseInt(res.mot5));                
           SendMessage('Q4','moverQ4',parseInt(res.mot7));
-           
         /*
         if (res.mot5!=0) {
           SendMessage('Q5','moverQ5',parseInt(res.mot5));
@@ -213,21 +201,12 @@ console.log(res.mot7);
   }catch(error){
     console.log("Error en SendMessage");
   }
-
-
-
-
-
-
-
-    }
-
+}
  
 //ESTADO DE DISPOSITIVOS
 
      if(typeof res.monitor!="undefined"){
         $('#dispositivos').parent().addClass('panel-success');
-
 
             $('#interfaz1').val(res.monitor[0].interfaz);
               $('#resultado1').val(res.monitor[0].resultado);
@@ -246,7 +225,6 @@ console.log(res.mot7);
               $('#resultado3').val(res.monitor[3].resultado);
               $('#status3').val(res.monitor[3].commandstatus);
 
-
     }
 
   $('.moverQ1').click(function(e){
@@ -259,10 +237,7 @@ console.log(res.mot7);
 
  });
 
-
-
-
-       
+   
  });
 
 
@@ -293,7 +268,6 @@ console.log(res.mot7);
 
 //GRAFICA 3D
 
-
   // $('.moverQ1').click(function(e){
 
    // e.preventDefault();
@@ -303,8 +277,6 @@ console.log(res.mot7);
 
 
  // });
-
-
 
   $('.moverQ2').click(function(e){
     e.preventDefault();
