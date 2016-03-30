@@ -33,7 +33,7 @@
 
 
 		
-<input type="text" name="txtenvio" id ='txtenvio' placeholder="Ingrese código de terminal linux">  <input type="button" value="ejecutar"id="btnejecutar" >
+<input type="text" name="txtenvio" id ='txtenvio' placeholder="Ingrese código de terminal linux">  <input type="button" value="Ejecutar"id="btnejecutar" >
 
 
 <br>

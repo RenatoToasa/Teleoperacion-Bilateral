@@ -25,10 +25,11 @@
       //console.log any messages sent from server
       Server.bind('message', function( payload ) {
         var res = jQuery.parseJSON(payload);
-        
+           
+
 
         //console.log(res.origen);
-        if(typeof res!="null"){
+        if(typeof res!="null")  {
       //  console.log( res );   
            
     }
@@ -80,8 +81,6 @@
         $('.mot2').append('<option value="'+res.mot2'"></option>');
         $('.mot5').append('<option value="'+res.mot5'"></option>');
         $('.mot7').append('<option value="'+res.mot7'"></option>');
-
-
 */
 
   if( res.origen ==="controlador"){    
@@ -130,7 +129,6 @@ console.log(res.mot1);
 console.log(res.mot2);
 console.log(res.mot5);
 console.log(res.mot7);
-
      document.getElementById('mot1').setAttribute('value', parseInt(res.mot1));
      document.getElementById('mot2').setAttribute('value', parseInt(res.mot2));
      document.getElementById('mot5').setAttribute('value', parseInt(res.mot5));
@@ -171,13 +169,13 @@ console.log(res.mot7);
         $('#motor1').append("Motor8 = " + res.mot8);
         $('#motor1').append(' <BR />');
         $('#motor1').append("Motor9 = " + res.mot9);
-            
-        
         try{
           SendMessage('Q1','moverQ1',parseInt(res.mot1));        
           SendMessage('Q2','moverQ2',parseInt(res.mot2));                      
           SendMessage('Q3','moverQ3',parseInt(res.mot5));                
           SendMessage('Q4','moverQ4',parseInt(res.mot7));
+
+          
         /*
         if (res.mot5!=0) {
           SendMessage('Q5','moverQ5',parseInt(res.mot5));
@@ -288,3 +286,4 @@ console.log(res.mot7);
 
       Server.connect();
 });
+

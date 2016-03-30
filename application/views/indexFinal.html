@@ -11,17 +11,10 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo site_url('css'); ?>/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="<?php echo site_url('css'); ?>/noscript.css" /></noscript>
 
-
-
-
      <link href="<?php echo site_url('css'); ?>/style.css" rel="stylesheet">
 
-    
     <link href="<?php echo site_url('img'); ?>/favicon.ico" rel="shortcut icon">
-
-
     <script src="<?php echo site_url('js'); ?>/UnityProgress.js"></script>
-
 
     <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 
@@ -40,15 +33,12 @@
   <script src="<?php echo site_url('js'); ?>/broadcast.js"></script>
   <script src="<?php echo site_url('js'); ?>/DetectRTC.js"></script>
 
-
    </style>
-
 
 	</head>
 	<body class="is-loading-0 is-loading-1 is-loading-2">
 	<div id="viewer"> 
 	<span>
-
 
 	</span>
 
@@ -252,9 +242,9 @@
 			    TOTAL_MEMORY: 268435456,
 			    errorhandler: null,     // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
 			    compatibilitycheck: null,
-			    dataUrl: "<?php echo site_url('js'); ?>/Brazo16(WebGL).data",
-			    codeUrl: "<?php echo site_url('js'); ?>/Brazo16(WebGL).js",
-			    memUrl: "<?php echo site_url('js'); ?>/Brazo16(WebGL).mem",
+			    dataUrl: "<?php echo site_url('js'); ?>/Plataforma1(WebGL).data",
+				  codeUrl: "<?php echo site_url('js'); ?>/Plataforma1(WebGL).js",
+			    memUrl: "<?php echo site_url('js'); ?>/Plataforma1(WebGL).mem",
 			  };
 			</script>
 			 <script src="<?php echo site_url('js'); ?>/UnityLoader.js"></script>
@@ -269,7 +259,6 @@
 				//Envio al mover motor1
 
 				//$('input[name="mot1"]').append('<option value="'+res.mot1'"></option>');
-
 
 				$('input[name="mot1"]').on('change',function(){
 					try{
@@ -300,7 +289,6 @@
 
 				});
 
-
 			//Envio al mover motor5
 				$('input[name="mot5"]').on('change',function(){
 					try{
@@ -316,7 +304,6 @@
 
 				});
 
-
 			//Envio al mover motor7
 				$('input[name="mot7"]').on('change',function(){
 					try{
@@ -331,7 +318,6 @@
 					}
 
 				});
-
 					
 			});
 			</script>
