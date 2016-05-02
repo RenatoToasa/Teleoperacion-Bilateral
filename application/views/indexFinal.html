@@ -16,6 +16,8 @@
     <link href="<?php echo site_url('img'); ?>/favicon.ico" rel="shortcut icon">
     <script src="<?php echo site_url('js'); ?>/UnityProgress.js"></script>
 
+
+
     <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 
   <script src="<?php echo site_url('js'); ?>/jquery-2.1.4.min.js"></script>
@@ -48,9 +50,19 @@
 		        <div id="videos-container" >
 		        </div>
 		    </section>
-		    <div class="contenedorUnity" style="">
-		      <canvas class="emscripten" id="canvas" name= "canvas" oncontextmenu="event.preventDefault()" height="250px" width="300px">
+		    <div class="contenedorUnity" style="background:#082803" >
+		<H1 >  <strong>AQUI VA LA</strong></H1>
+		  <BR>
+		  <BR>
+		 <H1>   <strong>ANIMACION 3D </strong></H1>
+		  <BR>
+		  <BR>
+		 <H1>   <strong>RESPONSABLE: EPN</strong></H1>
+
+		     <canvas class="emscripten"  style='display:none;' id="canvas" name= "canvas" oncontextmenu="event.preventDefault()" height="250px" width="300px">
 		      </canvas>
+
+
 		      <br>
 		     <!-- <div class="logo"></div>
 		      <div class="fullscreen">
@@ -68,13 +80,50 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Teleoperación Bilateral</h1>
+<br>
+				<div class="col-lg-0.5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <center> <input type="button" id ='btncontrolador' value="Datos Controlador" /></center>	
+					</div>
+					<div class="panel-body" id='controlador' style ='display:none;' >	
+					<center>
+						 Px: 0000   	fx: 0000
+						 <br>
+						 Py: 0000	    fy: 0000
+						 <br>
+						 Pz: 0000	    fz: 0000
+						 </center>
+						 
 
-							<br>
+					</div>
+				</div>
+			</div>
+							<div class="col-lg-0.5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <center> <input type="button" id ='btnplataforma' value="Datos Plataforma" /></center>	
+					</div>
+					<div class="panel-body" id='plataforma'style ='display:none;'>	
+					<center>
+						 Px: 0000   	fx: 0000
+						 <br>
+						 Py: 0000	    fy: 0000
+						 <br>
+						 Pz: 0000	    fz: 0000
+						 </center>
+					</div>
+				</div>
+			</div>
+
+ <!--
+
+							<strong><center><h4>Dispositivos</h4></center></strong>
 
 		<div class="col-lg-0.5">
 				<div class="panel panel-default">
 					<div class="panel-heading" id="manipulador">
-						 <center><strong>Manipulador Movil</strong></center>	
+						 <center><strong><input type="button" id ='btnmanipulador' value="Manipulador Movil" /></strong></center>	
 				
 					</div>
 				
@@ -83,8 +132,8 @@
 
 		<div class="col-lg-0.5">
 				<div class="panel panel-default">
-					<div class="panel-heading">
-						 <center><strong>Brazo robotico</strong></center>	
+					<div class="panel-heading" id ="brazo">
+						 <center><strong><input type="button" id ='btnbrazo' value="Brazo Robotico" /></strong></center>	
 				
 					</div>
 				
@@ -92,14 +141,15 @@
 			</div>
 				<div class="col-lg-0.5">
 				<div class="panel panel-default">
-					<div class="panel-heading">
-						 <center><strong>Plataforma Movil</strong></center>	
+					<div class="panel-heading" id= "plataforma">
+						 <center><strong><input type="button" id ='btnplataforma' value="Plataforma Movil" /></strong></center>	
 				
 					</div>
 				
 				</div>
 			</div>
 
+				<b><center><h4>Datos</h4></center></b>
 				<div class="col-lg-0.5" >
 				<div class="panel panel-default" >
 					<div class="panel-heading"  >
@@ -124,7 +174,15 @@
 						 <center> <input type="button" id ='btnposicion' value="Posicion/Velocidad" /></center>	
 					</div>
 					<div class="panel-body" id='posicion' style ='display:none;'>	
-					
+					<center>
+						 Px: 0000   	fx: 0000
+						 <br>
+						 Py: 0000	    fy: 0000
+						 <br>
+						 Pz: 0000	    fz: 0000
+						 </center>
+
+
 					</div>
 				</div>
 			</div>
@@ -134,7 +192,15 @@
 						 <center> <input type="button" id ='btnhmanipulabilidad' value="Manipulabilidad" /></center>	
 					</div>
 					<div class="panel-body" id='manipulabilidad' style ='display:none;' >	
-					
+					<center>
+						 Px: 0000   	fx: 0000
+						 <br>
+						 Py: 0000	    fy: 0000
+						 <br>
+						 Pz: 0000	    fz: 0000
+						 </center>
+						 
+
 					</div>
 				</div>
 			</div>
@@ -144,7 +210,13 @@
 						 <center> <input type="button" id ='btnconfig' value="Configuracion del Robot" /></center>	
 					</div>
 					<div class="panel-body" id='config'style ='display:none;'>	
-					
+					<center>
+						 Px: 0000   	fx: 0000
+						 <br>
+						 Py: 0000	    fy: 0000
+						 <br>
+						 Pz: 0000	    fz: 0000
+						 </center>
 					</div>
 				</div>
 			</div>
@@ -164,7 +236,11 @@
 						<input type="range" id ="mot5" name="mot5" min="0" max="4096"  >
 						<label>MOT7</label>
 						<input type="range" id ="mot7" name="mot7" min="0" max="4096"  >
+
+
+
 -->
+
 					</header>					
 
 				<!-- Thumbnail -->
@@ -195,11 +271,7 @@
 			<script src="<?php echo site_url('js'); ?>/main.js"></script>
 			
 			<script type='text/javascript'>
-			$('#manipulador').parent().addClass('panel-success');
-			$('#falcon').parent().addClass('panel-success');
-			$('#posicion').parent().addClass('panel-success');
-			$('#manipulabilidad').parent().addClass('panel-success');
-			$('#config').parent().addClass('panel-success');
+			
 		/*
         $("#btnhaptico")
           .mouseenter(function() {
@@ -214,9 +286,49 @@
          	estilo.setAttribute('style','display:none;' );
   });
 
-*/
+
+*/      /*
+
+    $('#manipulador').parent().addClass('panel-success');
+			$('#falcon').parent().addClass('panel-success');
+			$('#posicion').parent().addClass('panel-success');
+			$('#manipulabilidad').parent().addClass('panel-success');
+			$('#config').parent().addClass('panel-success');
+
+$("#btnmanipulador").click(function(){
+
+//     $('#manipulador').parent().addClass('panel-success');
+ $('#manipulador').parent().addClass('panel-info');
+
+
+        });
+
+
+$("#btnbrazo").click(function(){
+
+//     $('#manipulador').parent().addClass('panel-success');
+  $('#manipulador').parent().addClass('panel-success');
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         $("#btnhaptico").click(function(){
 
+//  $('#manipulador').parent().addClass('panel-default');
         	$('#falcon').slideToggle("slow");
 
         });
@@ -237,6 +349,9 @@
         	$('#config').slideToggle("slow");
 
         });
+
+
+        */
 
 			  var Module = {
 			    TOTAL_MEMORY: 268435456,

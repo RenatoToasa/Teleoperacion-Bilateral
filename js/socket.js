@@ -1,15 +1,17 @@
   $(document).ready(function() {
 
       console.log('Connecting...');
-      Server = new FancyWebSocket('ws://192.168.1.102:9300');
+      Server = new FancyWebSocket('ws://192.168.1.106:9300');
 
       //Let the user know we're connected
       Server.bind('open', function() {
+        // Tiempo
+//console.time("t1");
         console.log( "Connected." );
     //  var mensaje = {'cliente':'php','ip':'192.168.1.106','datos':'05050','estado':'conexion','tiempo':'0.14'  };
       var mensaje = {'cliente':'php'};
         Server.send('message', JSON.stringify(mensaje) );
-
+//alert(console.timeEnd("t1")); 
       });
 
 
@@ -17,7 +19,7 @@
       Server.bind('close', function( data ) {
      //   alert(data);
 
-      
+
         console.log( "Disconnected." );
       });
 
@@ -28,12 +30,17 @@
            
 
 
+
+
         //console.log(res.origen);
-        if(typeof res!="null")  {
-      //  console.log( res );   
+       if (payload!="null"){
+     //s   console.log( res );   
            
     }
     
+
+/*
+
 
 //ENVIO DATOS CLIENTE SERVIDOR CLIENTE
        if(typeof res.resultado!="undefined"){
@@ -44,7 +51,7 @@
               SendMessage('Q1','moverQ1',res.val1);
        
        }
-
+*/
         $('#interfaz1').val("");
         $('#resultado1').val("");
         $('#status1').val("");
@@ -174,7 +181,6 @@ console.log(res.mot7);
           SendMessage('Q2','moverQ2',parseInt(res.mot2));                      
           SendMessage('Q3','moverQ3',parseInt(res.mot5));                
           SendMessage('Q4','moverQ4',parseInt(res.mot7));
-
           
         /*
         if (res.mot5!=0) {
@@ -239,7 +245,32 @@ console.log(res.mot7);
  });
 
 
+///DATOS PLATAFORMA-CONTROLADOR
+  if( res.origen ==="controlador"){    
+
+
+      
+}
+
+
+
+
+
+
+
+
 //CONSOLA DE ADMINISTRACION
+
+$("#btnenvio").click(function(){
+
+        var mensaje = {'origen':'php', 'destino':'Controlador','texto':'123'};
+        Server.send('message', JSON.stringify(mensaje) );
+
+
+        });
+
+
+
        
         $("#btnConectar").click(function(){
    //      if( res.cliente==="consola"){  
@@ -258,7 +289,9 @@ console.log(res.mot7);
   
             $('#txtconsola').html('');   
        var texto= $('#txtenvio').val();
-        var mensaje = {'origen':'php', 'destino':'consola','ventana':'uno', 'comando':texto};
+
+        var mensaje = {'origen':'php', 'destino':'plataforma','ventana':'uno', 'comando':texto};
+        //var mensaje = {'origen':'php', 'destino':'consola','ventana':'uno', 'comando':texto};
         Server.send('message', JSON.stringify(mensaje) );
 
          

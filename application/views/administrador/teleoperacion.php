@@ -94,6 +94,7 @@ function grafica(documento){
 					</div>
 				</div>
 			</div>
+			 <!--
 
 						<div class="col-lg-2">
 				<div class="panel panel-default">
@@ -106,7 +107,7 @@ function grafica(documento){
 				</div>
 			</div>
 
-
+-->
 
 		</div>
 	</div>
@@ -171,6 +172,9 @@ function grafica(documento){
 				</div>
 			</div>
 
+
+
+ <!--
 						<div class="col-lg-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -182,7 +186,7 @@ function grafica(documento){
 				</div>
 			</div>
 
-
+-->
 		</div>
 	</div>
 </div>
@@ -287,8 +291,11 @@ function grafica(documento){
 					</div>
 					<div class="panel-body" id='admin'>	
 				<input type="button" id ='btnAbrir' value="Abrir ventana" onclick="ventanaNueva('<?php echo site_url('index.php/Administrador/consola'); ?> ')"/>
-
+ <!--
 				<input type="button" id ='btn3D' value="Abrir 3D" onclick="grafica('<?php echo site_url('index.php/Administrador/grafica'); ?> ')"/>
+
+				-->		
+					<input type="button" id ='btnenvio' name= 'btnenvio' value="envio" />	
 					
 					</div>
 				</div>
