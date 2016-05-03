@@ -90,6 +90,86 @@
         $('.mot7').append('<option value="'+res.mot7'"></option>');
 */
 
+
+
+///DATOS PLATAFORMA-CONTROLADOR
+  if( res.origen ==="Controlador"){    
+
+  $('#controlador').parent().addClass('panel-success');
+
+    switch(res.posicion) {
+    case "0":
+        $('#puerto').val("Puerto = " + res.valor);
+        break;
+    case "1":
+        $('#vx').val("Velocidad X = " + res.valor);
+        break;
+    case "2":
+        $('#vy').val("Velocidad Y = " + res.valor);
+        break;
+
+    case "3":
+        $('#vz').val("Velocidad Z = " + res.valor);
+        break;
+    case "4":
+        $('#ex').val("Error X = " + res.valor);
+        break;
+      case "5":
+        $('#ey').val("Error Y = " + res.valor);
+        break;
+    case "6":
+        $('#ez').val("Error Z = " + res.valor);
+        break;
+        case "7":
+        $('#control').val("Control = " + res.valor);
+        break;
+} 
+
+      
+}
+
+
+  if( res.origen ==="Plataforma"){    
+  
+    $('#plataforma').parent().addClass('panel-success');
+    switch(res.posicion) {
+    case "0":
+        $('#confirmacion').val("Confirmacion = " + res.valor);
+        break;
+    case "1":
+        $('#px').val("Posición X = " + res.valor);
+        break;
+    case "2":
+        $('#py').val("Posición Y = " + res.valor);
+        break;
+
+    case "3":
+        $('#angulog').val("Angulo Giro = " + res.valor);
+        break;
+    case "4":
+        $('#b1').val("Angulo Brazo 1= " + res.valor);
+        break;
+      case "5":
+        $('#b2').val("Angulo Brazo 2= " + res.valor);
+        break;
+    case "6":
+        $('#b3').vsl("Angulo Brazo 3= " + res.valor);
+        break;
+    
+
+} 
+
+      
+}
+
+
+
+
+
+
+
+
+
   if( res.origen ==="controlador"){    
         var fechaActual = new Date();
         var m = fechaActual.getMilliseconds();
@@ -245,12 +325,6 @@ console.log(res.mot7);
  });
 
 
-///DATOS PLATAFORMA-CONTROLADOR
-  if( res.origen ==="controlador"){    
-
-
-      
-}
 
 
 

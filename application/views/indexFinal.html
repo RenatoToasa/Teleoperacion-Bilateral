@@ -51,13 +51,13 @@
 		        </div>
 		    </section>
 		    <div class="contenedorUnity" style="background:#082803" >
-		<H1 >  <strong>AQUI VA LA</strong></H1>
+		<H1 >  <strong>AQUI VA </strong></H1>
 		  <BR>
 		  <BR>
-		 <H1>   <strong>ANIMACION 3D </strong></H1>
+		 <H1>   <strong>LA ANIMACION </strong></H1>
 		  <BR>
 		  <BR>
-		 <H1>   <strong>RESPONSABLE: EPN</strong></H1>
+		 <H1>   <strong>3D</strong></H1>
 
 		     <canvas class="emscripten"  style='display:none;' id="canvas" name= "canvas" oncontextmenu="event.preventDefault()" height="250px" width="300px">
 		      </canvas>
@@ -88,11 +88,14 @@
 					</div>
 					<div class="panel-body" id='controlador' style ='display:none;' >	
 					<center>
-						 Px: 0000   	fx: 0000
-						 <br>
-						 Py: 0000	    fy: 0000
-						 <br>
-						 Pz: 0000	    fz: 0000
+						<input type="text" name="puerto" id ='puerto'> 
+						<input type="text" name="vx" id ='vx'> 
+						<input type="text" name="vy" id ='vy'>
+						<input type="text" name="vz" id ='vz'>
+						<input type="text" name="ex" id ='ex'>
+						<input type="text" name="ey" id ='ey'>
+						<input type="text" name="ez" id ='ez'>
+						<input type="text" name="control" id ='control'>
 						 </center>
 						 
 
@@ -105,13 +108,17 @@
 						 <center> <input type="button" id ='btnplataforma' value="Datos Plataforma" /></center>	
 					</div>
 					<div class="panel-body" id='plataforma'style ='display:none;'>	
-					<center>
-						 Px: 0000   	fx: 0000
-						 <br>
-						 Py: 0000	    fy: 0000
-						 <br>
-						 Pz: 0000	    fz: 0000
+					
+						<center>
+						<input type="text" name="confirmacion" id ='confirmacion'> 
+						<input type="text" name="px" id ='px'> 
+						<input type="text" name="py" id ='py'>					
+						<input type="text" name="angulog" id ='angulog'>
+						<input type="text" name="b1" id ='b1'>
+						<input type="text" name="b2" id ='b2'>
+						<input type="text" name="b3" id ='b3'>
 						 </center>
+						 
 					</div>
 				</div>
 			</div>
@@ -271,7 +278,17 @@
 			<script src="<?php echo site_url('js'); ?>/main.js"></script>
 			
 			<script type='text/javascript'>
-			
+			 $("#btncontrolador").click(function(){
+
+        	$('#controlador').slideToggle("slow");
+
+        });
+
+			 	 $("#btnplataforma").click(function(){
+
+        	$('#plataforma').slideToggle("slow");
+
+        });
 		/*
         $("#btnhaptico")
           .mouseenter(function() {
