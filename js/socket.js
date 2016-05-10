@@ -1,7 +1,7 @@
   $(document).ready(function() {
 
       console.log('Connecting...');
-      Server = new FancyWebSocket('ws://192.168.1.106:9300');
+      Server = new FancyWebSocket('ws://192.168.1.102:9300');
 
       //Let the user know we're connected
       Server.bind('open', function() {
@@ -97,33 +97,17 @@
 
   $('#controlador').parent().addClass('panel-success');
 
-    switch(res.posicion) {
-    case "0":
-        $('#puerto').val("Puerto = " + res.valor);
-        break;
-    case "1":
-        $('#vx').val("Velocidad X = " + res.valor);
-        break;
-    case "2":
-        $('#vy').val("Velocidad Y = " + res.valor);
-        break;
 
-    case "3":
-        $('#vz').val("Velocidad Z = " + res.valor);
-        break;
-    case "4":
-        $('#ex').val("Error X = " + res.valor);
-        break;
-      case "5":
-        $('#ey').val("Error Y = " + res.valor);
-        break;
-    case "6":
-        $('#ez').val("Error Z = " + res.valor);
-        break;
-        case "7":
-        $('#control').val("Control = " + res.valor);
-        break;
-} 
+        $('#puerto').val("Puerto = " + res.com);
+        $('#vx').val("Velocidad X = " + res.valorx);
+        $('#vy').val("Velocidad Y = " + res.valory);
+        $('#vz').val("Velocidad Z = " + res.valorz);
+        $('#ex').val("Error X = " + res.errorx);
+        $('#ey').val("Error Y = " + res.errory);
+        $('#ez').val("Error Z = " + res.errorz);
+        $('#control').val("Control = " + res.control);
+        
+
 
       
 }
@@ -132,35 +116,21 @@
   if( res.origen ==="Plataforma"){    
   
     $('#plataforma').parent().addClass('panel-success');
-    switch(res.posicion) {
-    case "0":
-        $('#confirmacion').val("Confirmacion = " + res.valor);
-        break;
-    case "1":
-        $('#px').val("Posición X = " + res.valor);
-        break;
-    case "2":
-        $('#py').val("Posición Y = " + res.valor);
-        break;
+   
+        $('#confirmacion').val("Confirmacion = " + res.ok);
+        $('#px').val("Posición X = " + res.valorx);
+        $('#py').val("Posición Y = " + res.valory);
+        $('#angulog').val("Angulo Giro = " + res.teta);
+        $('#b1').val("Angulo Brazo 1= " + res.q1);
+        $('#b2').val("Angulo Brazo 2= " + res.q2);
+        $('#b3').vsl("Angulo Brazo 3= " + res.q3);
 
-    case "3":
-        $('#angulog').val("Angulo Giro = " + res.valor);
-        break;
-    case "4":
-        $('#b1').val("Angulo Brazo 1= " + res.valor);
-        break;
-      case "5":
-        $('#b2').val("Angulo Brazo 2= " + res.valor);
-        break;
-    case "6":
-        $('#b3').vsl("Angulo Brazo 3= " + res.valor);
-        break;
     
 
 } 
 
       
-}
+
 
 
 
