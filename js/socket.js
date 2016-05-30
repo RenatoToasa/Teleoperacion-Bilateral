@@ -1,7 +1,8 @@
   $(document).ready(function() {
 
       console.log('Connecting...');
-      Server = new FancyWebSocket('ws://192.168.1.102:9300');
+
+      Server = new FancyWebSocket('ws://190.15.141.99:8180');
 
       //Let the user know we're connected
       Server.bind('open', function() {
