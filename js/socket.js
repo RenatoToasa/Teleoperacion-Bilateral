@@ -2,7 +2,8 @@
 
       console.log('Connecting...');
 
-      Server = new FancyWebSocket('ws://190.15.141.99:8180');
+      Server = new FancyWebSocket('ws://192.168.1.102:9300');
+	//Server = new FancyWebSocket('ws://190.15.141.99:8180');
 
       //Let the user know we're connected
       Server.bind('open', function() {
@@ -78,11 +79,7 @@
         $('#streaming').parent().addClass('panel-success');    
         $('#admin').parent().addClass('panel-success');    
 
-      if( res.cliente==="controlador"){            
-        $('#cliente').html('');    
-        $('#cliente').parent().addClass('panel-success');
-        $('#cliente').append(res.cliente );
-       }
+
 
 /*
         $('.mot1').append('<option value="'+parseInt(res.mot1)'"></option>');
@@ -94,7 +91,10 @@
 
 
 ///DATOS PLATAFORMA-CONTROLADOR
-  if( res.origen ==="Controlador"){    
+
+if (res !="null" )
+{
+  if(res.origen ==="Controlador"){    
 
   $('#controlador').parent().addClass('panel-success');
 
@@ -104,6 +104,7 @@
         $('#vy').val("Velocidad Y = " + res.valory);
         $('#vz').val("Velocidad Z = " + res.valorz);
         $('#ex').val("Error X = " + res.errorx);
+
         $('#ey').val("Error Y = " + res.errory);
         $('#ez').val("Error Z = " + res.errorz);
         $('#control').val("Control = " + res.control);
@@ -124,57 +125,28 @@
         $('#angulog').val("Angulo Giro = " + res.teta);
         $('#b1').val("Angulo Brazo 1= " + res.q1);
         $('#b2').val("Angulo Brazo 2= " + res.q2);
-        $('#b3').vsl("Angulo Brazo 3= " + res.q3);
-
-    
-
-} 
-
-      
+        $('#b3').val("Angulo Brazo 3= " + res.q3);
 
 
+        try{
+          SendMessage('Q11','moverQ1',parseInt(res.q1));        
+          SendMessage('Q22','moverQ2',parseInt(res.q2));                      
+          SendMessage('Q33','moverQ3',parseInt(res.q3));                
+          SendMessage('manipulador1','moverRobot',parseInt(res.teta));
+          
+        
 
+  }catch(error){
+    console.log("Error en SendMessage");
+  }    
 
-
-
-
-
-
-
-  if( res.origen ==="controlador"){    
-        var fechaActual = new Date();
-        var m = fechaActual.getMilliseconds();
-        $('#tiempo').html('');
-        $('#tiempo').parent().addClass('panel-success');
-        $('#tiempo').append(m);  
-     
-        $('#datos').html('');
-        $('#datos').parent().addClass('panel-success');
-        $('#datos').append(res.val_silla);       
-        $('#estado').html('');
-        $('#estado').parent().addClass('panel-success');
-        $('#estado').append("Conexion");
-        $('#motor').html('');
-        $('#motor').parent().addClass('panel-success');
-        $('#motor').append("Motor1 = " + res.motor1)
-        $('#motor').append(' <BR />');
-        $('#motor').append("Motor2 = " + res.motor2);
-        $('#motor').append(' <BR />');
-        $('#motor').append("Motor3 = " + res.motor3);
-        $('#motor').append(' <BR />');
-        $('#motor').append("Motor4 = " + res.motor4);
-        $('#motor').append(' <BR />');
-        $('#motor').append("Motor5 = " + res.motor5);
-        $('#motor').append(' <BR />');
-        $('#motor').append("Motor6 = " + res.motor6);
-        $('#motor').append(' <BR />');
-        $('#motor').append("Motor7 = " + res.motor7);
-        $('#motor').append(' <BR />');
-        $('#motor').append("Motor8 = " + res.motor8);
-        $('#motor').append(' <BR />');
-        $('#motor').append("Motor9 = " + res.motor9);
-      
+ } 
 }
+
+      
+
+
+
      
       if( res.cliente==="plataforma"){            
         $('#cliente1').html('');    
@@ -294,13 +266,6 @@ console.log(res.mot7);
 
    
  });
-
-
-
-
-
-
-
 
 
 

@@ -67,7 +67,8 @@ class Administrador extends CI_Controller {
 		$this->socket->bind('close', 'wsOnClose');     
 
 
-		return $this->socket->wsStartServer('10.20.0.68','8180');
+		return $this->socket->wsStartServer('192.168.1.102','9300');
+	//	return $this->socket->wsStartServer('10.20.0.68','8180');
 		
 
 	}
