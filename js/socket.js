@@ -138,16 +138,17 @@ if (res !="null" )
 
 
         try{
-          SendMessage('QA11','moverQ1',parseInt(res.q1));        
-          SendMessage('QA22','moverQ2',parseInt(res.q2));                      
-          SendMessage('QA33','moverQ3',parseInt(res.q3));                
+          
+          SendMessage('Q11','moverQ1',parseInt((res.q1/100)*-57,29);
+          SendMessage('Q22','moverQ2',parseInt(((res.q2/100)*57,29)-90);                      
+          SendMessage('Q33','moverQ3',parseInt(((res.q3/100)*57,29)+90);
 
           
-          SendMessage('Manipulador_A','moverRobot',parseInt(res.teta));     
+          SendMessage('manipulador1','moverRobot',parseInt(res.teta/100)*-57,29);    
           
           //SendMessage('Administrador','desactivar_A');
-          SendMessage('Administrador','desactivar_B');
-          SendMessage('Administrador','desactivar_C');
+         // SendMessage('Administrador','desactivar_B');
+       //   SendMessage('Administrador','desactivar_C');
 
        //  SendMessage('Manipulador_A','moverRobot',1000);
 
