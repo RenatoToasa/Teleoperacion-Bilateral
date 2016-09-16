@@ -1,0 +1,30 @@
+2016-09-14 19:52:28: 192.168.1.104 (1) has connected.
+stdClass Object
+(
+    [cliente] => Plataforma
+)
+Plataforma{"cliente":"Plataforma"}stdClass Object
+(
+    [origen] => Plataforma
+    [destino] => php
+    [sesion] => Prueba1
+    [x] => 110
+    [y] => 200
+    [teta] => 50
+    [q1] => 20
+    [q2] => 20
+    [q3] => 15
+)
+{"origen":"Plataforma","destino":"php","sesion":"Prueba1","x":"110","y":"200","teta":"50","q1":"20","q2":"20","q3":"15"}stdClass Object
+(
+    [origen] => Plataforma
+    [destino] => php
+    [sesion] => Prueba1
+    [x] => 110
+    [y] => 200
+    [teta] => 50
+    [q1] => 20
+    [q2] => 20
+    [q3] => 15
+)
+{"origen":"Plataforma","destino":"php","sesion":"Prueba1","x":"110","y":"200","teta":"50","q1":"20","q2":"20","q3":"15"}2016-09-14 19:52:31: 192.168.1.104 (1) has disconnected.

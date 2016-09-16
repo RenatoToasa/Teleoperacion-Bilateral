@@ -41,7 +41,7 @@ class Administrador extends CI_Controller {
 		$data=array();
 		$this->load->view('Brazo/index.html',$data);
 	}
-	public function admin_video(){
+	public function mp4(){
 		$data=array();
 		$this->load->view('administrador/streaming',$data);
 	}
@@ -67,7 +67,7 @@ class Administrador extends CI_Controller {
 		$this->socket->bind('close', 'wsOnClose');     
 
 
-		return $this->socket->wsStartServer('192.168.1.102','9300');
+		return $this->socket->wsStartServer('192.168.1.104','9300');
 	//	return $this->socket->wsStartServer('10.20.0.68','8180');
 		
 
@@ -211,12 +211,13 @@ class Administrador extends CI_Controller {
 	function wsOnClose($clientID, $status) {
 
 		$ip = long2ip($this->socket->wsClients[$clientID][6]);
-	
-		$this->socket->log("$ip ($clientID) has disconnected.");
+		$name = sprintf($this->socket->wsClients[$clientID][12]);
+
+				$this->socket->log("$ip ($clientID) has disconnected. $name");
  
 		//Send a user left notice to everyone in the room
 		foreach ($this->socket->wsClients as $id => $client)
-			$this->socket->wsSend($id, json_encode(array('tipo'=>'desconexion','cliente'=>$clientID ,'ip'=>$ip)));
+			$this->socket->wsSend($id, json_encode(array('tipo'=>'desconexion','cliente'=>$clientID ,'ip'=>$ip )));
 	}
 
 }

@@ -96,10 +96,11 @@
 					</div>
 				</div>
 			</div>
-							<div class="col-lg-0.5">
+			
+			<div class="col-lg-0.5">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 <center> <input type="button" id ='btnplataforma' value="Datos Plataforma" /></center>	
+						 <center> <input type="button" id ='btnplataforma' value="Datos Plataforma 1" /></center>	
 					</div>
 					<div class="panel-body" id='plataforma'style ='display:none;'>	
 					
@@ -117,6 +118,51 @@
 				</div>
 			</div>
 
+
+
+<div class="col-lg-0.5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <center> <input type="button" id ='btnplataforma1' value="Datos Plataforma 2" /></center>	
+					</div>
+					<div class="panel-body" id='plataforma1'style ='display:none;'>	
+					
+						<center>
+						<input type="text" name="confirmacion1" id ='confirmacion1'> 
+						<input type="text" name="px1" id ='px1'> 
+						<input type="text" name="py1" id ='py1'>					
+						<input type="text" name="angulog1" id ='angulog1'>
+						<input type="text" name="b11" id ='b11'>
+						<input type="text" name="b21" id ='b21'>
+						<input type="text" name="b31" id ='b31'>
+						 </center>
+						 
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="col-lg-0.5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <center> <input type="button" id ='btnplataforma2' value="Datos Plataforma 3" /></center>	
+					</div>
+					<div class="panel-body" id='plataforma2'style ='display:none;'>	
+					
+						<center>
+						<input type="text" name="confirmacion2" id ='confirmacion2'> 
+						<input type="text" name="px2" id ='px2'> 
+						<input type="text" name="py2" id ='py2'>					
+						<input type="text" name="angulog2" id ='angulog2'>
+						<input type="text" name="b12" id ='b12'>
+						<input type="text" name="b22" id ='b22'>
+						<input type="text" name="b32" id ='b32'>
+						 </center>
+						 
+					</div>
+				</div>
+			</div>
  <!--
 
 							<strong><center><h4>Dispositivos</h4></center></strong>
@@ -280,6 +326,19 @@
         	$('#plataforma').slideToggle("slow");
 
         });
+
+			 	  $("#btnplataforma1").click(function(){
+
+        	$('#plataforma1').slideToggle("slow");
+
+        });
+
+			 	   $("#btnplataforma2").click(function(){
+
+        	$('#plataforma2').slideToggle("slow");
+
+        });
+
 		/*
         $("#btnhaptico")
           .mouseenter(function() {
@@ -365,9 +424,9 @@ $("#btnbrazo").click(function(){
 			    TOTAL_MEMORY: 268435456,
 			    errorhandler: null,     // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
 			    compatibilitycheck: null,
-			    dataUrl: "<?php echo site_url('js'); ?>/V12.data",
-				  codeUrl: "<?php echo site_url('js'); ?>/V12.js",
-			    memUrl: "<?php echo site_url('js'); ?>/V12.mem",
+			    dataUrl: "<?php echo site_url('js'); ?>/V30.data",
+				  codeUrl: "<?php echo site_url('js'); ?>/V30.js",
+			    memUrl: "<?php echo site_url('js'); ?>/V30.mem",
 			  };
 			</script>
 			 <script src="<?php echo site_url('js'); ?>/UnityLoader.js"></script>
@@ -376,9 +435,22 @@ $("#btnbrazo").click(function(){
 			function testing(texto){
 				console.log(texto);
 			}
+
+
+    
+
+
+
+
+
 			</script>
 			<script type="text/javascript">
 			$(document).ready(function(){
+
+
+
+
+
 				//Envio al mover motor1
 
 				//$('input[name="mot1"]').append('<option value="'+res.mot1'"></option>');
@@ -444,6 +516,9 @@ $("#btnbrazo").click(function(){
 					
 			});
 			</script>
+
+
+
 
 	</body>
 </html>

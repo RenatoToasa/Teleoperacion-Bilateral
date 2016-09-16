@@ -2,7 +2,7 @@
 
       console.log('Connecting...');
 
-      Server = new FancyWebSocket('ws://192.168.1.102:9300');
+      Server = new FancyWebSocket('ws://192.168.1.104:9300');
 	//Server = new FancyWebSocket('ws://190.15.141.99:8180');
 
       //Let the user know we're connected
@@ -37,6 +37,7 @@
         //console.log(res.origen);
        if (payload!="null"){
      //s   console.log( res );   
+
            
     }
     
@@ -69,6 +70,10 @@
 
        if (payload!="null"){
 
+
+
+
+
         $('#consola').parent().addClass('panel-success');
            $('#consola').append(' <BR />');
         $('#consola').append(payload);
@@ -91,6 +96,10 @@
 
 
 ///DATOS PLATAFORMA-CONTROLADOR
+if (res === 'null'){
+  console.log('Llego un valor nulo');
+
+}
 
 if (res !="null" )
 {
@@ -129,18 +138,137 @@ if (res !="null" )
 
 
         try{
-          SendMessage('Q11','moverQ1',parseInt(res.q1));        
-          SendMessage('Q22','moverQ2',parseInt(res.q2));                      
-          SendMessage('Q33','moverQ3',parseInt(res.q3));                
-          SendMessage('manipulador1','moverRobot',parseInt(res.teta));
+          SendMessage('QA11','moverQ1',parseInt(res.q1));        
+          SendMessage('QA22','moverQ2',parseInt(res.q2));                      
+          SendMessage('QA33','moverQ3',parseInt(res.q3));                
+
           
+          SendMessage('Manipulador_A','moverRobot',parseInt(res.teta));     
+          
+          //SendMessage('Administrador','desactivar_A');
+          SendMessage('Administrador','desactivar_B');
+          SendMessage('Administrador','desactivar_C');
+
+       //  SendMessage('Manipulador_A','moverRobot',1000);
+
+       //  SendMessage('Manipulador_A','velIzquierdaA',100);
+        // SendMessage('Manipulador_A','velDerechaA',100);
+
         
 
   }catch(error){
     console.log("Error en SendMessage");
   }    
-
  } 
+
+  if( res.origen ==="Plataforma1"){    
+  
+    $('#plataforma').parent().addClass('panel-success');
+   
+        $('#confirmacion').val("Confirmacion = " + res.ok);
+        $('#px').val("Posición X = " + res.valorx);
+        $('#py').val("Posición Y = " + res.valory);
+        $('#angulog').val("Angulo Giro = " + res.teta);
+        $('#b1').val("Angulo Brazo 1= " + res.q1);
+        $('#b2').val("Angulo Brazo 2= " + res.q2);
+        $('#b3').val("Angulo Brazo 3= " + res.q3);
+
+
+        try{
+          SendMessage('QA11','moverQ1',parseInt(res.q1));        
+          SendMessage('QA22','moverQ2',parseInt(res.q2));                      
+          SendMessage('QA33','moverQ3',parseInt(res.q3));                
+
+          
+          SendMessage('Manipulador_A','moverRobot',parseInt(res.teta));     
+          
+          //SendMessage('Administrador','desactivar_A');
+        //  SendMessage('Administrador','desactivar_B');
+          //SendMessage('Administrador','desactivar_C');
+
+       //  SendMessage('Manipulador_A','moverRobot',1000);
+
+       //  SendMessage('Manipulador_A','velIzquierdaA',100);
+        // SendMessage('Manipulador_A','velDerechaA',100);
+
+        
+
+  }catch(error){
+    console.log("Error en SendMessage");
+  }    
+ } 
+
+//2
+  if( res.origen ==="Plataforma2"){    
+  
+    $('#plataforma1').parent().addClass('panel-success');
+   
+        $('#confirmacion1').val("Confirmacion = " + res.ok);
+        $('#px1').val("Posición X = " + res.valorx);
+        $('#py1').val("Posición Y = " + res.valory);
+        $('#angulog1').val("Angulo Giro = " + res.teta);
+        $('#b11').val("Angulo Brazo 1= " + res.q1);
+        $('#b21').val("Angulo Brazo 2= " + res.q2);
+        $('#b31').val("Angulo Brazo 3= " + res.q3);
+
+
+        try{
+          SendMessage('QA11','moverQ1',parseInt(res.q1));        
+          SendMessage('QA22','moverQ2',parseInt(res.q2));                      
+          SendMessage('QA33','moverQ3',parseInt(res.q3));                
+
+          
+          SendMessage('manipulador1','moverRobot',parseInt(res.teta));     
+          
+         // SendMessage('Administrador','desactivar_A');
+         // SendMessage('Administrador','desactivar_B');
+         // SendMessage('Administrador','desactivar_C');
+
+
+
+        
+
+  }catch(error){
+    console.log("Error en SendMessage");
+  }    
+ }
+
+ //3
+
+   if( res.origen ==="Plataforma3"){    
+  
+    $('#plataforma2').parent().addClass('panel-success');
+   
+        $('#confirmacion2').val("Confirmacion = " + res.ok);
+        $('#px2').val("Posición X = " + res.valorx);
+        $('#py2').val("Posición Y = " + res.valory);
+        $('#angulog2').val("Angulo Giro = " + res.teta);
+        $('#b12').val("Angulo Brazo 1= " + res.q1);
+        $('#b22').val("Angulo Brazo 2= " + res.q2);
+        $('#b32').val("Angulo Brazo 3= " + res.q3);
+
+
+        try{
+          SendMessage('QA11','moverQ1',parseInt(res.q1));        
+          SendMessage('QA22','moverQ2',parseInt(res.q2));                      
+          SendMessage('QA33','moverQ3',parseInt(res.q3));                
+
+          
+         // SendMessage('manipulador1','moverRobot',parseInt(res.teta));     
+          
+        //  SendMessage('Administrador','desactivar_A');
+         // SendMessage('Administrador','desactivar_B');
+         // SendMessage('Administrador','desactivar_C');
+
+
+
+        
+
+  }catch(error){
+    console.log("Error en SendMessage");
+  }    
+ }
+
 }
 
       

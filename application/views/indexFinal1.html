@@ -11,17 +11,11 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo site_url('css'); ?>/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="<?php echo site_url('css'); ?>/noscript.css" /></noscript>
 
-
-
-
      <link href="<?php echo site_url('css'); ?>/style.css" rel="stylesheet">
 
-    
     <link href="<?php echo site_url('img'); ?>/favicon.ico" rel="shortcut icon">
+    <script src="<?php echo site_url('js'); ?>/UnityProgress1.js"></script>
 
-
-
-    <script src="<?php echo site_url('js'); ?>/UnityProgress.js"></script>
 
 
     <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
@@ -41,25 +35,28 @@
   <script src="<?php echo site_url('js'); ?>/broadcast.js"></script>
   <script src="<?php echo site_url('js'); ?>/DetectRTC.js"></script>
 
-
+   </style>
 
 	</head>
 	<body class="is-loading-0 is-loading-1 is-loading-2">
 	<div id="viewer"> 
+	<span>
 
+	</span>
 
 		<div class="inner"> 
 			<!--MAGIA-->
 			 <section class="experiment"> 
-			 <div>
 		        <div id="videos-container" >
 		        </div>
-
-
 		    </section>
-		    <div class="contenedorUnity1"   >
-		      <canvas class="emscripten" id="canvas" name= "canvas" oncontextmenu="event.preventDefault()" height="250px" width="350px" >
+		    <div class="contenedorUnity" >
+
+
+		     <canvas class="emscripten"   id="canvas" name= "canvas" oncontextmenu="event.preventDefault()" height="250px" width="300px">
 		      </canvas>
+
+
 		      <br>
 		     <!-- <div class="logo"></div>
 		      <div class="fullscreen">
@@ -69,68 +66,175 @@
 		      -->
 		    </div>
 		<!--/MAGIA-->
-			<div class="toggle" ></div> 
+			<div class="toggle" border= "1"></div> 
 		</div> 
 	</div>
 		<!-- Main -->
-			<div id="main" >
+			<div id="main">
 				<!-- Header -->
-					<header id="header" >
-						<h2>Teleoperacion Bilateral</h2>
-						<br>
-
-
-
+					<header id="header">
+						<h1>Teleoperación Bilateral</h1>
+<br>
 				<div class="col-lg-0.5">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 <center><strong>Falcon</strong></center>	
+						 <center> <input type="button" id ='btncontrolador' value="Datos Controlador" /></center>	
+					</div>
+					<div class="panel-body" id='controlador' style ='display:none;' >	
+					<center>
+						<input type="text" name="puerto" id ='puerto'> 
+						<input type="text" name="vx" id ='vx'> 
+						<input type="text" name="vy" id ='vy'>
+						<input type="text" name="vz" id ='vz'>
+						<input type="text" name="ex" id ='ex'>
+						<input type="text" name="ey" id ='ey'>
+						<input type="text" name="ez" id ='ez'>
+						<input type="text" name="control" id ='control'>
+						 </center>
+						 
+
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-0.5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <center> <input type="button" id ='btnplataforma' value="Datos Plataforma 1" /></center>	
+					</div>
+					<div class="panel-body" id='plataforma'style ='display:none;'>	
+					
+						<center>
+						<input type="text" name="confirmacion" id ='confirmacion'> 
+						<input type="text" name="px" id ='px'> 
+						<input type="text" name="py" id ='py'>					
+						<input type="text" name="angulog" id ='angulog'>
+						<input type="text" name="b1" id ='b1'>
+						<input type="text" name="b2" id ='b2'>
+						<input type="text" name="b3" id ='b3'>
+						 </center>
+						 
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			
+ <!--
+
+							<strong><center><h4>Dispositivos</h4></center></strong>
+
+		<div class="col-lg-0.5">
+				<div class="panel panel-default">
+					<div class="panel-heading" id="manipulador">
+						 <center><strong><input type="button" id ='btnmanipulador' value="Manipulador Movil" /></strong></center>	
+				
+					</div>
+				
+				</div>
+			</div>
+
+		<div class="col-lg-0.5">
+				<div class="panel panel-default">
+					<div class="panel-heading" id ="brazo">
+						 <center><strong><input type="button" id ='btnbrazo' value="Brazo Robotico" /></strong></center>	
+				
+					</div>
+				
+				</div>
+			</div>
+				<div class="col-lg-0.5">
+				<div class="panel panel-default">
+					<div class="panel-heading" id= "plataforma">
+						 <center><strong><input type="button" id ='btnplataforma' value="Plataforma Movil" /></strong></center>	
+				
+					</div>
+				
+				</div>
+			</div>
+
+				<b><center><h4>Datos</h4></center></b>
+				<div class="col-lg-0.5" >
+				<div class="panel panel-default" >
+					<div class="panel-heading"  >
+						 <center> <input type="button" id ='btnhaptico' value="Dispsitivo Haptico" /></center>	
 				
 
 					</div>
-					<div class="panel-body" id='falcon'>	
-							 <center>
-						 Pl: 0000
+					<div class="panel-body" id='falcon' style ='display:none;' >	
+						<center>
+						 Px: 0000   	fx: 0000
 						 <br>
-						 Pm: 0000
+						 Py: 0000	    fy: 0000
 						 <br>
-						 Pn: 0000
+						 Pz: 0000	    fz: 0000
 						 </center>
 					</div>
 				</div>
 			</div>
-
 							<div class="col-lg-0.5">
 				<div class="panel panel-default">
-					<div class="panel-heading">
-						 <center><strong>Brazo</strong></center>	
+					<div class="panel-heading" >
+						 <center> <input type="button" id ='btnposicion' value="Posicion/Velocidad" /></center>	
 					</div>
-					<div class="panel-body" id='brazo'>	
-					
+					<div class="panel-body" id='posicion' style ='display:none;'>	
+					<center>
+						 Px: 0000   	fx: 0000
+						 <br>
+						 Py: 0000	    fy: 0000
+						 <br>
+						 Pz: 0000	    fz: 0000
+						 </center>
+
+
 					</div>
 				</div>
 			</div>
-
 							<div class="col-lg-0.5">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 <center><strong>Plataforma</strong></center>	
+						 <center> <input type="button" id ='btnhmanipulabilidad' value="Manipulabilidad" /></center>	
 					</div>
-					<div class="panel-body" id='plataforma'>	
-					
+					<div class="panel-body" id='manipulabilidad' style ='display:none;' >	
+					<center>
+						 Px: 0000   	fx: 0000
+						 <br>
+						 Py: 0000	    fy: 0000
+						 <br>
+						 Pz: 0000	    fz: 0000
+						 </center>
+						 
+
 					</div>
 				</div>
 			</div>
-
+							<div class="col-lg-0.5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <center> <input type="button" id ='btnconfig' value="Configuracion del Robot" /></center>	
+					</div>
+					<div class="panel-body" id='config'style ='display:none;'>	
+					<center>
+						 Px: 0000   	fx: 0000
+						 <br>
+						 Py: 0000	    fy: 0000
+						 <br>
+						 Pz: 0000	    fz: 0000
+						 </center>
+					</div>
+				</div>
+			</div>
+						<!--
 						<ul class="icons">
-
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
 							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-						
 						</ul>
-<!-- 
+
 						<label>MOT1</label>
 						<input type="range" id ="mot1" name="mot1" min="0" max="4096" >
 						<label>MOT2</label>
@@ -140,9 +244,8 @@
 						<label>MOT7</label>
 						<input type="range" id ="mot7" name="mot7" min="0" max="4096"  >
 -->
-					</header>
 
-					
+					</header>					
 
 				<!-- Thumbnail -->
 					<section id="thumbnails">
@@ -152,10 +255,15 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="copyright">
-<!-- 
-							<li>&copy; Teleoperacion.</li><li>Desarrolladores: <a href="http://designscrazed.org/">UTA</a>.</li>
-							-->
+					<!--		<li>&copy; Untitled.</li><li>Design: <a href="http://designscrazed.org/">HTML5</a>.</li>-->
 						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+
 					</footer>
 
 			</div>
@@ -165,30 +273,136 @@
 			<!--[if lte IE 8]><script src="<?php echo site_url('bower_components/respond/src'); ?>/respond.js"></script><![endif]-->
 
 			<script src="<?php echo site_url('js'); ?>/main.js"></script>
+			
 			<script type='text/javascript'>
-			  $('#falcon').parent().addClass('panel-success');
+			 $("#btncontrolador").click(function(){
+
+        	$('#controlador').slideToggle("slow");
+
+        });
+
+			 	 $("#btnplataforma").click(function(){
+
+        	$('#plataforma').slideToggle("slow");
+
+        });
+
+
+		/*
+        $("#btnhaptico")
+          .mouseenter(function() {
+          	var estilo = document.getElementById("falcon");
+	
+			var nuevo= estilo.getAttribute("style");         
+         	estilo.setAttribute('style','display:inline;' );         	
+		  })
+		  .mouseleave(function() {
+		   	var estilo = document.getElementById("falcon");			
+			var nuevo= estilo.getAttribute("style");
+         	estilo.setAttribute('style','display:none;' );
+  });
+
+
+*/      /*
+
+    $('#manipulador').parent().addClass('panel-success');
+			$('#falcon').parent().addClass('panel-success');
+			$('#posicion').parent().addClass('panel-success');
+			$('#manipulabilidad').parent().addClass('panel-success');
+			$('#config').parent().addClass('panel-success');
+
+$("#btnmanipulador").click(function(){
+
+//     $('#manipulador').parent().addClass('panel-success');
+ $('#manipulador').parent().addClass('panel-info');
+
+
+        });
+
+
+$("#btnbrazo").click(function(){
+
+//     $('#manipulador').parent().addClass('panel-success');
+  $('#manipulador').parent().addClass('panel-success');
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $("#btnhaptico").click(function(){
+
+//  $('#manipulador').parent().addClass('panel-default');
+        	$('#falcon').slideToggle("slow");
+
+        });
+           $("#btnposicion").click(function(){
+
+        	$('#posicion').slideToggle("slow");
+
+        });
+
+        $("#btnhmanipulabilidad").click(function(){
+
+        	$('#manipulabilidad').slideToggle("slow");
+
+        });
+
+        $("#btnconfig").click(function(){
+
+        	$('#config').slideToggle("slow");
+
+        });
+
+
+        */
+
 			  var Module = {
 			    TOTAL_MEMORY: 268435456,
 			    errorhandler: null,     // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
 			    compatibilitycheck: null,
-			    dataUrl: "<?php echo site_url('js'); ?>/Plataforma1(WebGL).data",
-				  codeUrl: "<?php echo site_url('js'); ?>/Plataforma1(WebGL).js",
-			    memUrl: "<?php echo site_url('js'); ?>/Plataforma1(WebGL).mem",
+			    dataUrl: "<?php echo site_url('js'); ?>/V12.data",
+				  codeUrl: "<?php echo site_url('js'); ?>/V12.js",
+			    memUrl: "<?php echo site_url('js'); ?>/V12.mem",
 			  };
 			</script>
-			 <script src="<?php echo site_url('js'); ?>/UnityLoader.js"></script>
+			 <script src="<?php echo site_url('js'); ?>/UnityLoader1.js"></script>
 			 <script src="<?php echo site_url('js'); ?>/streaming.js" type="text/javascript"></script>
 			<script type="text/javascript" >
 			function testing(texto){
 				console.log(texto);
 			}
+
+
+    
+
+
+
+
+
 			</script>
 			<script type="text/javascript">
 			$(document).ready(function(){
+
+
+
+
+
 				//Envio al mover motor1
 
 				//$('input[name="mot1"]').append('<option value="'+res.mot1'"></option>');
-
 
 				$('input[name="mot1"]').on('change',function(){
 					try{
@@ -219,7 +433,6 @@
 
 				});
 
-
 			//Envio al mover motor5
 				$('input[name="mot5"]').on('change',function(){
 					try{
@@ -235,7 +448,6 @@
 
 				});
 
-
 			//Envio al mover motor7
 				$('input[name="mot7"]').on('change',function(){
 					try{
@@ -250,14 +462,12 @@
 					}
 
 				});
-
-
-
-
-
 					
 			});
 			</script>
+
+
+
 
 	</body>
 </html>
